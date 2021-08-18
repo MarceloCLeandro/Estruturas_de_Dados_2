@@ -56,7 +56,7 @@ public class Aluno implements Comparable<Aluno> {
         this.media = media;
     }
 
-    @Override
+    /*@Override
     public int compareTo(Aluno outro) {  // comparamos os RGMs
         if (rgm.compareTo(outro.getRgm()) < 0) {
             return -1;
@@ -65,7 +65,7 @@ public class Aluno implements Comparable<Aluno> {
         } else {
             return 1;
         }
-    }
+    }*/
 
     /*
     @Override
@@ -76,7 +76,7 @@ public class Aluno implements Comparable<Aluno> {
     }    
      */
     
-   /*
+   
     // para comparar os nomes e deixar em ordem alfabética
     @Override
     public int compareTo(Aluno outro) {  // comparamos os Nomes dos Alunos
@@ -84,5 +84,5 @@ public class Aluno implements Comparable<Aluno> {
         else if(nome.compareTo(outro.getNome()) == 0)return 0;
         else return  1;
     }
-    */
+    
 }

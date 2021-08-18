@@ -1,9 +1,7 @@
 // Classe ABB para demonstrar a inserção e o atravessamento em-ordem 
 // em uma Árvore Binária de Busca (ABB)
 // Ledón, 2016-2020.
-
 // EXEMPLOS DADOS PELO PROFESSOR LEDÓN 
-
 package Estruturas_de_Dados_2.Aula_2;
 
 import java.util.LinkedList;
@@ -110,6 +108,54 @@ class ABB<E extends Comparable<E>> {  // Árvore Binária de Busca
             System.out.print(no.getValue() + "\n");
             emOrdem2(no.getFilhoDireito());
         }
+    }
+
+    // Pré-ordem ou Pré-fixa
+    public void preOrdem() {
+        preOrdem(raiz);
+    }
+
+    public void preOrdem(Node no) { // mostra os objetos separados por espaços
+        if (no != null) {
+            System.out.print(no.getValue() + "   ");
+            preOrdem(no.getFilhoEsquerdo());
+            preOrdem(no.getFilhoDireito());
+        }
+    }
+
+    // Pós-ordem ou Pós-fixa
+    public void posOrdem() {
+        posOrdem(raiz);
+    }
+
+    public void posOrdem(Node no) { // mostra os objetos separados por espaços
+        if (no != null) {
+            posOrdem(no.getFilhoEsquerdo());
+            posOrdem(no.getFilhoDireito());
+            System.out.print(no.getValue() + "   ");
+        }
+    }
+
+    // Em Nilve ou Nivel á Nivel
+    public void emNivel() {
+        emNivel(raiz);
+    }
+
+    public void emNivel(Node no) { // mostra os objetos separados por espaços
+        Node noAux;
+        LinkedList fila = new LinkedList();
+        fila.addLast(raiz);
+        while (!fila.isEmpty()) {
+            noAux = (Node) fila.removeFirst();
+            if (noAux.getFilhoEsquerdo() != null) {
+                fila.addLast(noAux.getFilhoEsquerdo());
+            }
+            if (noAux.getFilhoDireito() != null) {
+                fila.addLast(noAux.getFilhoDireito());
+            }
+            System.out.print(noAux.getValue() + "   ");
+        }
+
     }
 
 }

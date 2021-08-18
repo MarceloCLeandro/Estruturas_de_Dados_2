@@ -1,9 +1,7 @@
 // Classe ABB para demonstrar a inserção e o atravessamento em-ordem 
 // em uma Árvore Binária de Busca (ABB)
 // Ledón, 2016-2020.
-
 // EXEMPLOS DADOS PELO PROFESSOR LEDÓN 
-
 package Estruturas_de_Dados_2.Aula_2;
 
 public class Testa_ABB {
@@ -24,6 +22,12 @@ public class Testa_ABB {
 
         System.out.println("\nVamos mostrar a ABB percorrendo em-ordem:");
         abb1.emOrdem();
+        System.out.println("\nVamos mostrar a ABB percorrendo pós-ordem:");
+        abb1.posOrdem();
+        System.out.println("\nVamos mostrar a ABB percorrendo pré-ordem:");
+        abb1.preOrdem();
+        System.out.println("\nVamos mostrar a ABB percorrendo em nível:");
+        abb1.emNivel();
 
         System.out.println("\n\nAgora vamos criar uma ABB (e percorrer em-ordem pelos RGMs) de objetos da classe Aluno:");
         ABB abb2 = new ABB();

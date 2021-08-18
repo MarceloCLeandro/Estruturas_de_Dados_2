@@ -75,4 +75,14 @@ public class Aluno implements Comparable<Aluno> {
         else return  1;
     }    
      */
+    
+   /*
+    // para comparar os nomes e deixar em ordem alfabética
+    @Override
+    public int compareTo(Aluno outro) {  // comparamos os Nomes dos Alunos
+        if(nome.compareTo(outro.getNome()) < 0)return -1;
+        else if(nome.compareTo(outro.getNome()) == 0)return 0;
+        else return  1;
+    }
+    */
 }

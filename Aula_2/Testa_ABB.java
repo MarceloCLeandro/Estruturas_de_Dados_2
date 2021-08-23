@@ -39,7 +39,7 @@ public class Testa_ABB {
         abb2.emOrdem2();
 
         //Utilizamos agora a segunda versão do método para inserir (add)
-        System.out.println("\nVamos criar uma ABB com objetos da classe Integer:");
+        /*System.out.println("\nVamos criar uma ABB com objetos da classe Integer:");
         ABB abb3 = new ABB();
         System.out.println("Inserimos " + abb3.add(12));
         System.out.println("Inserimos " + abb3.add(6));
@@ -60,7 +60,7 @@ public class Testa_ABB {
         abb4.add(new Aluno("444-4", "Betty", 'F', 9.0f));
         abb4.add(new Aluno("888-8", "Caio", 'M', 5.5f));
         abb4.add(new Aluno("333-3", "Lara", 'F', 7.8f));
-        abb4.emOrdem2();
+        abb4.emOrdem2();*/
 
         System.out.println("\n\n\n");
     }

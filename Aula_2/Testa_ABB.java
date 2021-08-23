@@ -29,7 +29,9 @@ public class Testa_ABB {
         System.out.println("\nVamos mostrar a ABB percorrendo em nível:");
         abb1.emNivel();
 
-        System.out.println("\n\nAgora vamos criar uma ABB (e percorrer em-ordem pelos RGMs) de objetos da classe Aluno:");
+        System.out.println("\n\nAgora vamos criar uma ABB (e percorrer em-ordem pelos Nomes) de objetos da classe Aluno:");
+        //System.out.println("\n\nAgora vamos criar uma ABB (e percorrer em-ordem pelos RGMs) de objetos da classe Aluno:");
+        //System.out.println("\n\nAgora vamos criar uma ABB (e percorrer em-ordem pelos Médias) de objetos da classe Aluno:");
         ABB abb2 = new ABB();
         abb2.inserir(new Aluno("999-9", "Ana", 'F', 9.5f));
         abb2.inserir(new Aluno("111-1", "Luiz", 'M', 6.5f));

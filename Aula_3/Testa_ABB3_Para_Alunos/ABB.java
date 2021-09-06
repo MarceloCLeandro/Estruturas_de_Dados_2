@@ -174,6 +174,55 @@ class ABB<E extends Comparable<E>> {  // Árvore Binária de Busca
         return valor;
     }
 
+    //Determina o menor elemento a partir de um nó
+    public Node getMenor(Node node) {
+        if (isEmpty()) {
+            return null;
+        }
+        if (node.getFilhoEsquerdo() == null) {
+            return node;
+        } else {
+            return getMenor(node.getFilhoEsquerdo());
+        }
+    }
+
+    //Determina o maior elemento a partir de um nó
+    public Node getMaior(Node node) {
+        if (isEmpty()) {
+            return null;
+        }
+        if (node.getFilhoDireito() == null) {
+            return node;
+        } else {
+            return getMaior(node.getFilhoDireito());
+        }
+    }
+
+    //Determina o maior elemento a partir de um nó 'raiz' 
+    //(e enlaça seu pai para eliminar esse nodo 'raiz' desta posição).
+    //Retorna o nodo com maior valor desta subárvore.
+    public Node getMax(Node raiz, Node paiRaiz) {
+        if (isEmpty()) {
+            return null;
+        }
+        Node aux;
+        //Se não tiver mais filho direito
+        if (raiz.getFilhoDireito() == null) { //encontrou o maior
+            aux = raiz;
+            //Se tiver um pai, ele assume o filho esquerdo (nunca terá filho direito)
+            if (paiRaiz != null) {
+                if (paiRaiz.getFilhoEsquerdo() == raiz) { //se 'raiz' era filho esquerdo do pai
+                    paiRaiz.setFilhoEsquerdo(raiz.getFilhoEsquerdo());
+                } else {  //se 'raiz' era filho direito do pai
+                    paiRaiz.setFilhoDireito(raiz.getFilhoEsquerdo());
+                }
+            }
+            return aux;
+        } else {
+            return getMax(raiz.getFilhoDireito(), raiz);
+        }
+    }
+
     public E insertContrary(E valor) { // implementação iterativa da inserção na ABB
         Node novoNodo;
         try {

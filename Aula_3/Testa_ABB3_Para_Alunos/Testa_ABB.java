@@ -21,13 +21,16 @@ public class Testa_ABB {
 
         System.out.println("\n\nVamos mostrar a ABB percorrendo em-ordem:\n");
         abb1.emOrdem();
-        System.out.println("\n\nVamos mostrar a ABB percorrendo pré-ordem:\n");
+
+        System.out.println("\n\nO menor valor desta árvore é: " + abb1.getMenor(abb1.getRaiz()));
+        System.out.println("O maior valor desta árvore é: " + abb1.getMaior(abb1.getRaiz()));
+
+        /*System.out.println("\n\nVamos mostrar a ABB percorrendo pré-ordem:\n");
         abb1.preOrdem();
         System.out.println("\n\nVamos mostrar a ABB percorrendo pós-ordem:\n");
         abb1.posOrdem();
         System.out.println("\n\nVamos mostrar a ABB percorrendo em nível:\n");
-        abb1.emNivel();
-
+        abb1.emNivel();*/
         System.out.println("\n\n\nAgora vamos criar uma ABB de objetos da classe Aluno (inserir pelos RGMs e percorrer em-ordem, ordenados):\n");
         ABB abb2 = new ABB();
         Aluno alA = new Aluno("888-8", "Caio", 'M', 5.5f);

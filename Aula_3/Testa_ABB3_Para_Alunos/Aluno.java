@@ -1,9 +1,8 @@
-
 // EXEMPLOS DADOS PELO PROFESSOR LEDÓN
-
 package Estruturas_de_Dados_2.Aula_3.Testa_ABB3_Para_Alunos;
 
 public class Aluno implements Comparable<Aluno> {
+
     private String rgm, nome;
     private char sexo;
     private float media;
@@ -14,7 +13,7 @@ public class Aluno implements Comparable<Aluno> {
         this.sexo = sexo;
         this.media = media;
     }
-    
+
     public String toString() {
         return rgm + " - " + nome + ", sexo: " + sexo + ", média: " + media;
     }
@@ -56,11 +55,15 @@ public class Aluno implements Comparable<Aluno> {
 
     @Override
     public int compareTo(Aluno outro) {  // comparamos os RGMs
-        if(rgm.compareTo(outro.getRgm()) < 0)return -1;
-        else if(rgm.compareTo(outro.getRgm()) == 0)return 0;
-        else return  1;
+        if (rgm.compareTo(outro.getRgm()) < 0) {
+            return -1;
+        } else if (rgm.compareTo(outro.getRgm()) == 0) {
+            return 0;
+        } else {
+            return 1;
+        }
     }
-    
+
     /*
     @Override
     public int compareTo(Aluno outro) {  // nesta versão comparamos as médias
@@ -68,6 +71,5 @@ public class Aluno implements Comparable<Aluno> {
         else if(media == outro.getMedia())return 0;
         else return  1;
     }    
-    */
-    
+     */
 }

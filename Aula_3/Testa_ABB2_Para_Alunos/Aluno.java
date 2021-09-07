@@ -54,12 +54,12 @@ public class Aluno implements Comparable<Aluno> {
         this.media = media;
     }
 
-    @Override
+    /*@Override
     public int compareTo(Aluno outro) {  // comparamos os RGMs
         if(rgm.compareTo(outro.getRgm()) < 0)return -1;
         else if(rgm.compareTo(outro.getRgm()) == 0)return 0;
         else return  1;
-    }
+    }*/
     
     /*
     @Override
@@ -69,5 +69,10 @@ public class Aluno implements Comparable<Aluno> {
         else return  1;
     }    
     */
-    
+    @Override
+    public int compareTo(Aluno outro) {  // nesta versão comparamos as médias
+        if(sexo != outro.getSexo())return -1;
+        else if(sexo == outro.getSexo())return 0;
+        else return  1;
+    } 
 }

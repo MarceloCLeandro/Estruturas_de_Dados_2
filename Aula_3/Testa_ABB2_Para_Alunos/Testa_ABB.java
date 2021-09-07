@@ -1,17 +1,14 @@
 // Classe ABB para demonstrar a inserção, busca, remoção, atravessamentos etc.
 // em uma Árvore Binária de Busca (ABB).
-
 // Ledón, 2016/2017; Amilton Souza Martha, 2015/2017.
-
 // EXEMPLOS DADOS PELO PROFESSOR LEDÓN
-
 package Estruturas_de_Dados_2.Aula_3.Testa_ABB2_Para_Alunos;
 
 public class Testa_ABB {
 
     public static void main(String[] args) {
-        
-        System.out.println("\n\nVamos criar uma ABB com objetos da classe Integer:\n");
+
+        /* System.out.println("\n\nVamos criar uma ABB com objetos da classe Integer:\n");
         ABB abb1 = new ABB();
         System.out.println( "Inserimos " + abb1.inserir(12) );
         System.out.println( "Inserimos " + abb1.inserir(6) );
@@ -39,8 +36,7 @@ public class Testa_ABB {
         System.out.println("\n\nVamos mostrar a ABB percorrendo em nível:\n");
         abb1.emNivel();
         System.out.println("\n\nO menor valor desta árvore é: " + abb1.getMenor( abb1.getRaiz() ) );
-        System.out.println("O maior valor desta árvore é: " + abb1.getMaior( abb1.getRaiz() ));
-        
+        System.out.println("O maior valor desta árvore é: " + abb1.getMaior( abb1.getRaiz() ));*/
         System.out.println("\n\n\nAgora vamos criar uma ABB de objetos da classe Aluno (inserir pelos RGMs e percorrer em-ordem, ordenados):\n");
         ABB abb2 = new ABB();
         Aluno alA = new Aluno("888-8", "Caio", 'M', 5.5f);
@@ -48,7 +44,7 @@ public class Testa_ABB {
         Aluno alC = new Aluno("666-6", "Vanessa", 'F', 8.8f);
         Aluno alD = new Aluno("111-1", "Luiz", 'M', 6.5f);
         Aluno alE = new Aluno("999-9", "Ana", 'F', 9.5f);
-        
+
         abb2.inserir(new Aluno("123-4", "Rosa", 'F', 4.5f));
         abb2.inserir(alE);
         abb2.inserir(alD);
@@ -57,9 +53,12 @@ public class Testa_ABB {
         abb2.inserir(new Aluno("777-7", "Renata", 'F', 7.2f));
         abb2.inserir(alA);
         abb2.inserir(alB);
+
+        abb2.emOrdem2();
         
-        abb2.emOrdem2();  
+        System.out.println("\nA média das notas das mulheres da turma é " + abb2.calculaMediaMulheres() + "\n");
         
+        /*
         System.out.println("\nBuscas - implementações recursivas");
         System.out.println("Encontrou " + abb2.searchABB(alA));
         System.out.println("Encontrou " + abb2.searchABB(alB));
@@ -99,8 +98,7 @@ public class Testa_ABB {
         System.out.println( "Inserimos " + abb3.inserir(5) );     
         System.out.println("Percorrendo em-ordem:");
         abb3.emOrdem();  
-        System.out.println("\n");
+        System.out.println("\n");*/
     }
-    
-
+         
 }

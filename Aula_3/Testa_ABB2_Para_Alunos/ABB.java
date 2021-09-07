@@ -1,9 +1,7 @@
 // Classe ABB para demonstrar a inserção, busca, remoção, atravessamentos etc.
 // em uma Árvore Binária de Busca (ABB).
 // Ledón, 2016/2017; Amilton Souza Martha, 2015/2017.
-
 // EXEMPLOS DADOS PELO PROFESSOR LEDÓN
-
 package Estruturas_de_Dados_2.Aula_3.Testa_ABB2_Para_Alunos;
 
 import java.util.LinkedList;
@@ -45,7 +43,7 @@ class ABB<E extends Comparable<E>> {  // Árvore Binária de Busca
       uma exception se são comparados objetos de tipos diferentes.
       Consequentemente, este método 'inserir' só conseguirá adicionar novos nodos que guardem objetos do mesmo tipo
       que o objeto inicial guardado na ABB, ou seja, a ABB guardará objetos do mesmo tipo.
-    */
+     */
     private Node inserir(Node novo, Node anterior) {
         if (raiz == null) {    // ou if(isEmpty())
             raiz = novo;  // ou setRaiz(novo);
@@ -196,7 +194,7 @@ class ABB<E extends Comparable<E>> {  // Árvore Binária de Busca
                 //Se o nó não possui filhos, basta sumir com o nó
                 if (node.getFilhoEsquerdo() == null && node.getFilhoDireito() == null) {
                     //Se não tiver pai, é a raiz da árvore
-                    if (paiRaiz == null) { 
+                    if (paiRaiz == null) {
                         setRaiz(null);
                     } //Senão, o pai deve "deserdar" o filho
                     else {
@@ -207,8 +205,7 @@ class ABB<E extends Comparable<E>> {  // Árvore Binária de Busca
                             paiRaiz.setFilhoDireito(null);
                         }
                     }
-                } 
-                else if (node.getFilhoDireito() == null) {   // se só tiver o filho esquerdo
+                } else if (node.getFilhoDireito() == null) {   // se só tiver o filho esquerdo
                     //Se tiver um pai, ele assume o filho esquerdo
                     if (paiRaiz != null) {
                         //Verifica se a raiz é filho esquerdo ou direito para assumir o neto
@@ -218,13 +215,12 @@ class ABB<E extends Comparable<E>> {  // Árvore Binária de Busca
                             paiRaiz.setFilhoDireito(node.getFilhoEsquerdo());
                         }
                     } //Se não tiver pai (caso da raiz), adotar seu filho esquerdo
-                    else {   
+                    else {
                         node.setValue(node.getFilhoEsquerdo().getValue());
                         node.setFilhoEsquerdo(node.getFilhoEsquerdo().getFilhoEsquerdo());
                         node.setFilhoDireito(node.getFilhoEsquerdo().getFilhoDireito());
                     }
-                } 
-                else if (node.getFilhoEsquerdo() == null) {   // se só tiver o filho direito
+                } else if (node.getFilhoEsquerdo() == null) {   // se só tiver o filho direito
                     //Se tiver um pai, ele assume o filho esquerdo
                     if (paiRaiz != null) {
                         //Verifica se a raiz é filho esquerdo ou direito para assumir o neto
@@ -239,15 +235,13 @@ class ABB<E extends Comparable<E>> {  // Árvore Binária de Busca
                         node.setFilhoEsquerdo(node.getFilhoDireito().getFilhoEsquerdo());
                         node.setFilhoDireito(node.getFilhoDireito().getFilhoDireito());
                     }
-                } 
-                else {   //a raiz node possui os 2 filhos
+                } else {   //a raiz node possui os 2 filhos
                     aux = getMax(node.getFilhoEsquerdo(), node);
                     node.setValue(aux.getValue());
                 }
                 aux = null;
                 return true;
-            } 
-            else { //Se não achou o nó a eliminar na raiz, continue procurando recursivamente:
+            } else { //Se não achou o nó a eliminar na raiz, continue procurando recursivamente:
                 //Se for menor que a raiz, continuar procurando à esquerda
                 if (compara(e, node.getValue()) < 0) {
                     return eliminar(node.getFilhoEsquerdo(), node, e);
@@ -283,9 +277,10 @@ class ABB<E extends Comparable<E>> {  // Árvore Binária de Busca
     }
 
     // Algumas implementações de operações com ABBs em forma iterativa:
-    
     public Node find(Object obj) {  // método (iterativo) para buscar um obj na ABB                          
-        if(isEmpty()) return null;
+        if (isEmpty()) {
+            return null;
+        }
         Node atual = raiz; // começamos na raiz
         while (compara(obj, atual.getValue()) != 0) { // enquanto não encontremos o item procurado
             if (compara(obj, atual.getValue()) < 0) {
@@ -330,6 +325,28 @@ class ABB<E extends Comparable<E>> {  // Árvore Binária de Busca
             }
         }
         return valor;
+    }
+
+    // Solução do exercício solicitado:
+    private int quantMulheres = 0;
+    private float somaMediaMulheres = 0;
+
+    public float calculaMediaMulheres() {
+        processaMulheres(raiz);
+        return somaMediaMulheres / quantMulheres;
+    }
+
+    public void processaMulheres(Node no) {
+        //usamos percurso em-ordem mas pode ser qualquer um
+        if (no != null) {
+            processaMulheres(no.getFilhoEsquerdo());
+            Aluno alu = (Aluno) no.getValue();
+            if (alu.getSexo() == 'F') {
+                quantMulheres++;
+                somaMediaMulheres += alu.getMedia();
+            }
+            processaMulheres(no.getFilhoDireito());
+        }
     }
 
 }

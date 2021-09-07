@@ -5,6 +5,7 @@
 package Estruturas_de_Dados_2.Aula_4_Pilha_Auxiliar;
 
 import java.util.LinkedList;
+import java.util.Stack;
 
 class ABB<E extends Comparable<E>> {  // Árvore Binária de Busca 
 
@@ -12,6 +13,30 @@ class ABB<E extends Comparable<E>> {  // Árvore Binária de Busca
 
     public ABB() {
         raiz = null;
+    }
+
+    // Solução Exercicío Aula 4
+    void preOrdemNaoRecursivo(Node raiz) {
+        if (isEmpty()) { // verifica se está vazia
+            System.out.println("A árvore ABB está vazia");
+            return;
+        }
+        Stack pi; //essa é a classe pilha que já vem pronta pela Oracle
+        Node p;
+        pi = new Stack(); //criamos uma pilha pi vazia
+        pi.push(raiz); // adicionamos, inicialmente, a raiz na pilha pi
+        while (!pi.isEmpty()) { //enquanto a pilha não estiver vazia
+            p = (Node) pi.pop(); // retiramos um nodo p da pilha
+            System.out.print(p.getValue() + "   "); //visualizamos o obj guardado no nodo retirado da pilha
+            // foi inserido o filho direito e o filho esquerdo, caso exista, nesta ordem
+            if (p.getFilhoDireito() != null) {
+                pi.push(p.getFilhoDireito());
+            }
+            if (p.getFilhoEsquerdo() != null) {
+                pi.push(p.getFilhoEsquerdo());
+            }
+        }// fim do While
+
     }
 
     public boolean isEmpty() {

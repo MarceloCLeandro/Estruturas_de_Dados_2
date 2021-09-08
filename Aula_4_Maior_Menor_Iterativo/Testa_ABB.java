@@ -19,7 +19,7 @@ public class Testa_ABB {
         System.out.println("Inserimos " + abb1.inserir(2));
         System.out.println("Inserimos " + abb1.inserir(5));
 
-        System.out.println("\nVamos mostrar a ABB percorrendo em-ordem:\n");
+        /*System.out.println("\nVamos mostrar a ABB percorrendo em-ordem:\n");
         abb1.emOrdem();
         System.out.println("\n\nVamos mostrar a ABB percorrendo pré-ordem:\n");
         abb1.preOrdem();
@@ -28,9 +28,11 @@ public class Testa_ABB {
         System.out.println("\n\nVamos mostrar a ABB percorrendo em nível:\n");
         abb1.emNivel();
         System.out.println("\n\nO menor valor desta árvore é: " + abb1.getMenor(abb1.getRaiz()));
-        System.out.println("O maior valor desta árvore é: " + abb1.getMaior(abb1.getRaiz()));
+        System.out.println("O maior valor desta árvore é: " + abb1.getMaior(abb1.getRaiz()));*/
+        System.out.println("\n\nO menor valor desta árvore é: " + abb1.getMenorIterativo(abb1.getRaiz()));
+        System.out.println("O maior valor desta árvore é: " + abb1.getMaiorIterativo(abb1.getRaiz()));
 
-        System.out.println("\n\n\nAgora vamos criar uma ABB de objetos da classe Aluno (inserir pelos RGMs e percorrer em-ordem, ordenados):\n");
+        /*System.out.println("\n\n\nAgora vamos criar uma ABB de objetos da classe Aluno (inserir pelos RGMs e percorrer em-ordem, ordenados):\n");
         ABB abb2 = new ABB();
         abb2.inserir(new Aluno("123-4", "Rosa", 'F', 4.5f));
         abb2.inserir(new Aluno("999-9", "Ana", 'F', 9.5f));
@@ -46,7 +48,7 @@ public class Testa_ABB {
         System.out.println("\nMenor valor desta árvore (pelo RGM): " + abb2.getMenor(abb2.getRaiz()));
         System.out.println("Maior valor desta árvore (pelo RGM): " + abb2.getMaior(abb2.getRaiz()));
 
-        System.out.println("\n");
+        System.out.println("\n");*/
     }
 
 }

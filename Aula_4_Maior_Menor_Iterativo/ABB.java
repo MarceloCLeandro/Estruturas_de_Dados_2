@@ -319,7 +319,7 @@ class ABB<E extends Comparable<E>> {  // Árvore Binária de Busca
         return valor;
     }
 
-    // Solução do exercicío 2 da aula 4
+    // Solução do exercício 2 da aula 4
     public Node getMenorIterativo(Node p) { //Método iterativo para verificar o menos elemento da ABB
         if (isEmpty()) {
             return null;

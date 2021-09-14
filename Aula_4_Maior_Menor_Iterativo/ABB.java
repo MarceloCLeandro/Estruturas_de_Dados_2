@@ -5,6 +5,7 @@
 package Estruturas_de_Dados_2.Aula_4_Maior_Menor_Iterativo;
 
 import java.util.LinkedList;
+import java.util.Stack;
 
 class ABB<E extends Comparable<E>> {  // Árvore Binária de Busca 
 
@@ -72,6 +73,10 @@ class ABB<E extends Comparable<E>> {  // Árvore Binária de Busca
     public void preOrdem() {
         preOrdem(raiz);
     }
+    
+    public void preOrdem2() {
+        preOrdem2(raiz);
+    }
 
     public void posOrdem() {
         posOrdem(raiz);
@@ -98,6 +103,14 @@ class ABB<E extends Comparable<E>> {  // Árvore Binária de Busca
             System.out.print(no.getValue() + "   ");
             preOrdem(no.getFilhoEsquerdo());
             preOrdem(no.getFilhoDireito());
+        }
+    }
+    
+    public void preOrdem2(Node no) {
+        if (no != null) {
+            System.out.println(no.getValue());
+            preOrdem2(no.getFilhoEsquerdo());
+            preOrdem2(no.getFilhoDireito());
         }
     }
 
@@ -340,6 +353,158 @@ class ABB<E extends Comparable<E>> {  // Árvore Binária de Busca
         }
 
         return p;
+    }
+      //Solução do professor Ledon
+     //SOLUÇÃO DO EXERCÍCIO 1  
+    
+    public void preOrdemIterativo() {  // ou preOrdemNaoRecursivo
+        if (isEmpty()) {
+            return;
+        }
+        LinkedList pilha = new LinkedList(); // pilha auxiliar
+        // Em lugar de LinkedList poderíamos usar a classe Stack do Java/Oracle
+        // e os métodos push (addFirst), pop (removeFirst), isEmpty
+        Node p;
+        pilha.addFirst(raiz);
+        while (!pilha.isEmpty()) {
+            p = (Node) pilha.removeFirst();
+            System.out.print(p.getValue() + "   ");
+            if (p.getFilhoDireito() != null) {
+                pilha.addFirst(p.getFilhoDireito());
+            }
+            if (p.getFilhoEsquerdo() != null) {
+                pilha.addFirst(p.getFilhoEsquerdo());
+            }
+        }
+        System.out.println("");
+    }
+
+    public void preOrdemIterativo2() {   // ou chamar preOrdemNaoRecursivo2
+        if (isEmpty()) {
+            return;
+        }
+        Stack pi = new Stack(); // pilha auxiliar
+        Node p;
+        pi.push(raiz);
+        while (!pi.isEmpty()) {
+            p = (Node) pi.pop();
+            System.out.println(p.getValue());
+            if (p.getFilhoDireito() != null) {
+                pi.push(p.getFilhoDireito());
+            }
+            if (p.getFilhoEsquerdo() != null) {
+                pi.push(p.getFilhoEsquerdo());
+            }
+        }
+        System.out.println("");
+    }
+
+    
+    //SOLUÇÃO DO EXERCÍCIO 2    
+    
+    public Node getMenorIterativo() {
+        if (isEmpty()) return null;
+        Node node = raiz;
+        while (node.getFilhoEsquerdo() != null) {
+            node = node.getFilhoEsquerdo();
+        }
+        return node;
+    }
+    
+    /*
+    Observe que estes dois métodos poderiam retornar o objeto guardado no nodo
+    //em lugar de retornar o nodo. Por exemplo: 
+    
+    public Object getMenorIterativo() {
+        if (isEmpty()) return null;
+        Node node = raiz;
+        while (node.getFilhoEsquerdo() != null) {
+            node = node.getFilhoEsquerdo();
+        }
+        return node.getValue();
+    }    
+    */
+
+    public Node getMaiorIterativo() {
+        if (isEmpty()) return null;
+        Node node = raiz;
+        while (node.getFilhoDireito() != null) {
+            node = node.getFilhoDireito();
+        }
+        return node;
+    }
+
+    //SOLUÇÃO DO EXERCÍCIO 3
+    
+    public double mediaDosNodos() {
+        //Percorre os elementos em pré-ordem (não recursivo, iterativo, como programamos antes)
+        //e soma e conta todos os valores.
+        //Qualquer outro percurso poderia ser utilizado, sempre que visitemos todos os nós.
+        //Esta função funciona somente com ABBs que armazenem valores numéricos.
+        if (isEmpty()) return 0.0f;
+        LinkedList pilha = new LinkedList(); // pilha auxiliar
+        Node p;
+        double soma = 0.0;
+        int qtde = 0;
+        pilha.addFirst(raiz);
+        while (!pilha.isEmpty()) {
+            p = (Node) pilha.removeFirst();
+            soma = soma + Double.parseDouble(p.getValue().toString());
+            qtde++;
+            if (p.getFilhoDireito() != null) {
+                pilha.addFirst(p.getFilhoDireito());
+            }
+            if (p.getFilhoEsquerdo() != null) {
+                pilha.addFirst(p.getFilhoEsquerdo());
+            }
+        }
+        return soma / qtde;
+    }
+
+
+    //SOLUÇÕES DO EXERCÍCIO 4
+    
+    public void emNivelInvertido() {
+        //Método iterativo que utiliza uma fila auxiliar e uma pilha auxiliar
+        Node noAux;
+        LinkedList fila = new LinkedList();
+        LinkedList pilha = new LinkedList();
+        fila.addLast(raiz);
+        while (!fila.isEmpty()) {
+            noAux = (Node) fila.removeFirst();
+            if (noAux.getFilhoEsquerdo() != null) {
+                fila.addLast(noAux.getFilhoEsquerdo());
+            }
+            if (noAux.getFilhoDireito() != null) {
+                fila.addLast(noAux.getFilhoDireito());
+            }
+            pilha.addFirst(noAux.getValue());
+        }
+        //visualizamos a pilha completa que foi criada:
+        System.out.println(pilha.toString());
+    }
+
+    public void emNivelInvertidoVersao2() {
+        //Método iterativo utilizando uma fila auxiliar e uma lista auxiliar 
+        Node noAux;
+        LinkedList fila = new LinkedList();
+        LinkedList lista = new LinkedList();
+        fila.addLast(raiz);
+        while (!fila.isEmpty()) {
+            noAux = (Node) fila.removeFirst();
+            lista.addLast(noAux);
+            if (noAux.getFilhoEsquerdo() != null) {
+                fila.addLast(noAux.getFilhoEsquerdo());
+            }
+            if (noAux.getFilhoDireito() != null) {
+                fila.addLast(noAux.getFilhoDireito());
+            }
+        }
+        //percorremos a lista, do final para o início:
+        for (int i = lista.size() - 1; i >= 0; i--) {
+            System.out.print(lista.get(i) + "   ");
+        }
+        System.out.println();
     }
 
 }

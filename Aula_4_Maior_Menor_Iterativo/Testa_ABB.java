@@ -7,33 +7,41 @@ package Estruturas_de_Dados_2.Aula_4_Maior_Menor_Iterativo;
 public class Testa_ABB {
 
     public static void main(String[] args) {
-
+        
         System.out.println("Vamos criar uma ABB com objetos da classe Integer:\n");
         ABB abb1 = new ABB();
-        System.out.println("Inserimos " + abb1.inserir(12));
-        System.out.println("Inserimos " + abb1.inserir(6));
-        System.out.println("Inserimos " + abb1.inserir(4));
-        System.out.println("Inserimos " + abb1.inserir(15));
-        System.out.println("Inserimos " + abb1.inserir(13));
-        System.out.println("Inserimos " + abb1.inserir(25));
-        System.out.println("Inserimos " + abb1.inserir(2));
-        System.out.println("Inserimos " + abb1.inserir(5));
-
-        /*System.out.println("\nVamos mostrar a ABB percorrendo em-ordem:\n");
-        abb1.emOrdem();
-        System.out.println("\n\nVamos mostrar a ABB percorrendo pré-ordem:\n");
+        System.out.println( "Inserimos " + abb1.inserir(12) );
+        System.out.println( "Inserimos " + abb1.inserir(6) );
+        System.out.println( "Inserimos " + abb1.inserir(4) );
+        System.out.println( "Inserimos " + abb1.inserir(15) );
+        System.out.println( "Inserimos " + abb1.inserir(13) );
+        System.out.println( "Inserimos " + abb1.inserir(25) );
+        System.out.println( "Inserimos " + abb1.inserir(2) );
+        System.out.println( "Inserimos " + abb1.inserir(5) );        
+        System.out.println( "Média dos nodos: " + abb1.mediaDosNodos() );
+        
+        ABB abbReais = new ABB();
+        System.out.println( "\nEm uma ABB com valores reais inserimos " + abbReais.inserir(12.5f) );
+        System.out.println( "Inserimos " + abbReais.inserir(66.2f) );
+        System.out.println( "Inserimos " + abbReais.inserir(4.3f) );  
+        System.out.println( "Média dos nodos: " + abbReais.mediaDosNodos() );
+        
+        System.out.println("\nVamos mostrar a ABB percorrendo pré-ordem (método recursivo):");
         abb1.preOrdem();
-        System.out.println("\n\nVamos mostrar a ABB percorrendo pós-ordem:\n");
-        abb1.posOrdem();
-        System.out.println("\n\nVamos mostrar a ABB percorrendo em nível:\n");
+        System.out.println("\n\nVamos mostrar a ABB percorrendo pré-ordem (método iterativo):");
+        abb1.preOrdemIterativo();
+        System.out.println("\nVamos mostrar a ABB percorrendo em nível (método iterativo):");
         abb1.emNivel();
-        System.out.println("\n\nO menor valor desta árvore é: " + abb1.getMenor(abb1.getRaiz()));
-        System.out.println("O maior valor desta árvore é: " + abb1.getMaior(abb1.getRaiz()));*/
-        System.out.println("\n\nO menor valor desta árvore é: " + abb1.getMenorIterativo(abb1.getRaiz()));
-        System.out.println("O maior valor desta árvore é: " + abb1.getMaiorIterativo(abb1.getRaiz()));
+        System.out.println("\n\nVamos mostrar a ABB percorrendo em nível, mas invertido (método iterativo):");
+        abb1.emNivelInvertido();
+        System.out.println("\nVamos mostrar a ABB percorrendo em nível, mas invertido (método iterativo, versão 2):");
+        abb1.emNivelInvertidoVersao2();
 
-        /*System.out.println("\n\n\nAgora vamos criar uma ABB de objetos da classe Aluno (inserir pelos RGMs e percorrer em-ordem, ordenados):\n");
-        ABB abb2 = new ABB();
+        System.out.println("\nO menor valor desta árvore é: " + abb1.getMenorIterativo() );
+        System.out.println("O maior valor desta árvore é: " + abb1.getMaiorIterativo() );
+        
+        System.out.println("\n\nAgora vamos criar uma ABB de objetos da classe Aluno (inserir pelos RGMs e percorrer em-ordem, ordenados):\n");
+        ABB abb2 = new ABB();     
         abb2.inserir(new Aluno("123-4", "Rosa", 'F', 4.5f));
         abb2.inserir(new Aluno("999-9", "Ana", 'F', 9.5f));
         abb2.inserir(new Aluno("111-1", "Luiz", 'M', 6.5f));
@@ -42,13 +50,17 @@ public class Testa_ABB {
         abb2.inserir(new Aluno("777-7", "Renata", 'F', 7.2f));
         abb2.inserir(new Aluno("888-8", "Caio", 'M', 5.5f));
         abb2.inserir(new Aluno("333-3", "Lara", 'F', 9.8f));
+        
+        abb2.emOrdem2();          
+        System.out.println();
+        
+        System.out.println("Menor valor desta árvore (pelo RGM): " + abb2.getMenorIterativo() );
+        System.out.println("Maior valor desta árvore (pelo RGM): " + abb2.getMaiorIterativo() + "\n");
 
-        abb2.emOrdem2();
-
-        System.out.println("\nMenor valor desta árvore (pelo RGM): " + abb2.getMenor(abb2.getRaiz()));
-        System.out.println("Maior valor desta árvore (pelo RGM): " + abb2.getMaior(abb2.getRaiz()));
-
-        System.out.println("\n");*/
+        System.out.println("Vamos mostrar esta ABB percorrendo pré-ordem (método recursivo):\n");
+        abb2.preOrdem2();
+        System.out.println("\nVamos mostrar esta ABB percorrendo pré-ordem (método iterativo):\n");
+        abb2.preOrdemIterativo2();
     }
 
 }

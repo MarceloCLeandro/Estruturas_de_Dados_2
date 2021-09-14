@@ -3,10 +3,10 @@ package Estruturas_de_Dados_2.Aula_6_AVL_Automoveis;
 
 public class Automovel implements Comparable<Automovel> {
 
-    public String placa;
-    public String marca;
-    public int ano;
-    public float preco;
+    private String placa;
+    private String marca;
+    private int ano;
+    private float preco;
 
     public Automovel(String placa, String marca, int ano, float preco) {
         this.placa = placa;

@@ -4,13 +4,14 @@ package Estruturas_de_Dados_2.Aula_6_AVL_Automoveis;
 public class Automovel implements Comparable<Automovel> {
 
     private String placa;
-    private String marca;
+    private String marca, modelo;
     private int ano;
     private float preco;
 
-    public Automovel(String placa, String marca, int ano, float preco) {
+    public Automovel(String placa, String marca, String modelo, int ano, float preco) {
         this.placa = placa;
         this.marca = marca;
+        this.modelo = modelo;
         this.ano = ano;
         this.preco = preco;
     }
@@ -50,6 +51,16 @@ public class Automovel implements Comparable<Automovel> {
         this.preco = preco;
     }
 
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+    
+    
+
     public int compareTo(Automovel outro) {
         if (placa.compareTo(outro.getPlaca()) < 0) {
             return -1;
@@ -62,7 +73,7 @@ public class Automovel implements Comparable<Automovel> {
 
     @Override
     public String toString() {
-        return "Placa: " + placa + ", marca: " + marca + ", ano: " + ano + ", preço: R$ " + preco;
+        return "Placa: " + placa + ", marca: " + marca + ", modelo: " + modelo + ", ano: " + ano + ", preço: R$ " + preco;
     }
 
 }

@@ -32,6 +32,8 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         txtArea = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
         btnInserir = new javax.swing.JButton();
+        txtModelo = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ALV de automóveis");
@@ -46,7 +48,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setText("Preço:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(270, 260, 120, 30);
+        jLabel1.setBounds(270, 310, 120, 30);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
         jLabel2.setText("ALV de automóveis");
@@ -61,7 +63,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel4.setText("Ano de Fab.:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(270, 210, 120, 30);
+        jLabel4.setBounds(270, 260, 120, 30);
 
         txtPlaca.setBackground(new java.awt.Color(204, 204, 255));
         txtPlaca.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -79,13 +81,13 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         txtAno.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         txtAno.setForeground(new java.awt.Color(159, 102, 102));
         jPanel1.add(txtAno);
-        txtAno.setBounds(410, 210, 280, 28);
+        txtAno.setBounds(410, 260, 280, 28);
 
         txtPreco.setBackground(new java.awt.Color(204, 204, 255));
         txtPreco.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         txtPreco.setForeground(new java.awt.Color(159, 102, 102));
         jPanel1.add(txtPreco);
-        txtPreco.setBounds(410, 260, 280, 30);
+        txtPreco.setBounds(410, 310, 280, 30);
 
         btnSair.setBackground(new java.awt.Color(153, 153, 255));
         btnSair.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -96,7 +98,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSair);
-        btnSair.setBounds(760, 330, 90, 30);
+        btnSair.setBounds(750, 360, 90, 30);
 
         btnPesquisar.setBackground(new java.awt.Color(153, 153, 255));
         btnPesquisar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -107,7 +109,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnPesquisar);
-        btnPesquisar.setBounds(600, 330, 140, 30);
+        btnPesquisar.setBounds(590, 360, 140, 30);
 
         btnRemover.setBackground(new java.awt.Color(153, 153, 255));
         btnRemover.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -118,7 +120,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnRemover);
-        btnRemover.setBounds(450, 330, 130, 30);
+        btnRemover.setBounds(450, 360, 130, 30);
 
         btnAtravessa.setBackground(new java.awt.Color(153, 153, 255));
         btnAtravessa.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -129,7 +131,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnAtravessa);
-        btnAtravessa.setBounds(230, 330, 200, 30);
+        btnAtravessa.setBounds(230, 360, 200, 30);
 
         txtArea.setBackground(new java.awt.Color(204, 204, 255));
         txtArea.setColumns(20);
@@ -139,7 +141,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         jScrollPane1.setViewportView(txtArea);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(40, 380, 900, 440);
+        jScrollPane1.setBounds(40, 400, 900, 420);
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel5.setText("Placa: ");
@@ -155,7 +157,23 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnInserir);
-        btnInserir.setBounds(90, 330, 120, 30);
+        btnInserir.setBounds(90, 360, 120, 30);
+
+        txtModelo.setBackground(new java.awt.Color(204, 204, 255));
+        txtModelo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        txtModelo.setForeground(new java.awt.Color(209, 102, 102));
+        txtModelo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtModeloActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtModelo);
+        txtModelo.setBounds(410, 210, 280, 30);
+
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel6.setText("Modelo:");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(270, 210, 130, 30);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(20, 20, 1000, 850);
@@ -169,7 +187,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
-        Automovel au = new Automovel(txtPlaca.getText(), "", 0, 0.0f);
+        Automovel au = new Automovel(txtPlaca.getText(), "","", 0, 0.0f);
         NoAVL nodo = avl.searchAVL(au);
         if (nodo == null) {
             txtArea.setText("O automóvel não foi encontrado.\nVerifique a placa digitada.");
@@ -178,6 +196,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         }
         //txtPlaca.setText("");
         txtMarca.setText("");
+        txtModelo.setText("");
         txtAno.setText("");
         txtPreco.setText("");
     }//GEN-LAST:event_btnPesquisarActionPerformed
@@ -194,6 +213,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 + avl.emNivelString() + "\n");
         txtPlaca.setText("");
         txtMarca.setText("");
+        txtModelo.setText("");
         txtAno.setText("");
         txtPreco.setText("");
     }//GEN-LAST:event_btnAtravessaActionPerformed
@@ -201,13 +221,15 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private void btnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirActionPerformed
         String placa = txtPlaca.getText();
         String marca = txtMarca.getText();
+        String modelo = txtModelo.getText();
         int ano = Integer.parseInt(txtAno.getText());
         float preco = Float.parseFloat(txtPreco.getText());
 
-        avl.insereAVL(new Automovel(placa, marca, ano, preco));
+        avl.insereAVL(new Automovel(placa, marca, modelo, ano, preco));
         txtArea.setText("Automóvel inserido com sucesso!\n");
         txtPlaca.setText("");
         txtMarca.setText("");
+        txtModelo.setText("");
         txtAno.setText("");
         txtPreco.setText("");
 
@@ -223,9 +245,14 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         }
         //txtPlaca.setText("");
         txtMarca.setText("");
+        txtModelo.setText("");
         txtAno.setText("");
         txtPreco.setText("");
     }//GEN-LAST:event_btnRemoverActionPerformed
+
+    private void txtModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtModeloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtModeloActionPerformed
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -271,11 +298,13 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtAno;
     private javax.swing.JTextArea txtArea;
     private javax.swing.JTextField txtMarca;
+    private javax.swing.JTextField txtModelo;
     private javax.swing.JTextField txtPlaca;
     private javax.swing.JTextField txtPreco;
     // End of variables declaration//GEN-END:variables

@@ -38,30 +38,27 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 51));
-        jPanel1.setForeground(new java.awt.Color(0, 0, 51));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(0, 0, 55));
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(234, 61, 61));
         jLabel1.setText("Preço:");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(270, 260, 120, 30);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(234, 61, 61));
         jLabel2.setText("ALV de automóveis");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(270, 10, 480, 60);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(234, 61, 61));
         jLabel3.setText("Marca:");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(270, 160, 120, 30);
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(234, 61, 61));
         jLabel4.setText("Ano de Fab.:");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(270, 210, 120, 30);
@@ -92,7 +89,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         btnSair.setBackground(new java.awt.Color(153, 153, 255));
         btnSair.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        btnSair.setForeground(new java.awt.Color(0, 0, 51));
         btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,7 +100,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         btnPesquisar.setBackground(new java.awt.Color(153, 153, 255));
         btnPesquisar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        btnPesquisar.setForeground(new java.awt.Color(0, 0, 51));
         btnPesquisar.setText("Pesquisar");
         btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,7 +111,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         btnRemover.setBackground(new java.awt.Color(153, 153, 255));
         btnRemover.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        btnRemover.setForeground(new java.awt.Color(0, 0, 51));
         btnRemover.setText("Remover");
         btnRemover.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,7 +122,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         btnAtravessa.setBackground(new java.awt.Color(153, 153, 255));
         btnAtravessa.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        btnAtravessa.setForeground(new java.awt.Color(0, 0, 51));
         btnAtravessa.setText("Atravessamentos");
         btnAtravessa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,14 +142,12 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         jScrollPane1.setBounds(40, 380, 900, 440);
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(234, 61, 61));
         jLabel5.setText("Placa: ");
         jPanel1.add(jLabel5);
         jLabel5.setBounds(270, 110, 120, 30);
 
         btnInserir.setBackground(new java.awt.Color(153, 153, 255));
         btnInserir.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        btnInserir.setForeground(new java.awt.Color(0, 0, 51));
         btnInserir.setText("Inserir");
         btnInserir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
